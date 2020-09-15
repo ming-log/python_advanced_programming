@@ -9,6 +9,3 @@ aa.test_age()  # >>>  -----test_age-----
 from imp import reload
 reload(aa)
 aa.test_age()  # >>>  -----test_age12sadsads32-----
-
-
-
