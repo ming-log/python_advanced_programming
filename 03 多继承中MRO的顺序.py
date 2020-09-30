@@ -34,7 +34,7 @@ class Grandson(Son1, Son2):
         # 多继承时，相对于使用类名.__init__方法，要把每个父类全部写一遍
         # 而super只用一句话，执行了全部父类的方法，这也是为何多继承需要全部传参的一个原因
         # super(Grandson, self).__init__(name, age, gender)
-        super().__init__(name, age, gender)
+        super().__init__(name, age, gender)   # 与上述写法等价
         print('Grandson的init结束被调用')
 
 

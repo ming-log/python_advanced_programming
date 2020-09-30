@@ -125,7 +125,7 @@ print(reuslt)
 # 第三个参数是方法名，调用 del 对象.属性 时自动触发执行方法
 # 第四个参数是字符串，调用 对象.属性.__doc__ ，此参数是该属性的描述信息
 
-#coding=utf-8
+# coding=utf-8
 class Foo(object):
     def get_bar(self):
         print("getter...")
