@@ -8,6 +8,7 @@
 # 表示类的描述信息
 class Foo:
     """ 描述类信息 """
+
     def func(self):
         pass
 
@@ -33,6 +34,7 @@ from test import Person
 obj = Person()
 print(obj.__module__)  # 输出 test 即：输出模块
 print(obj.__class__)  # 输出 test.Person 即：输出类
+
 
 # 3.__init__
 # 初始化方法，通过类创建对象时，自动触发执行
@@ -100,6 +102,8 @@ print(obj1.__dict__)
 
 obj2 = Province('山西', 20000)
 print(obj2.__dict__)
+
+
 # 获取 对象obj1 的属性
 # 输出：{'count': 20000, 'name': '山西'}
 
@@ -113,6 +117,8 @@ class Foo:
 
 obj = Foo()
 print(obj)
+
+
 # 输出：laowang
 
 
@@ -134,9 +140,9 @@ class Foo(object):
 
 obj = Foo()
 
-result = obj['k1']      # 自动触发执行 __getitem__
-obj['k2'] = 'laowang'   # 自动触发执行 __setitem__
-del obj['k1']           # 自动触发执行 __delitem__
+result = obj['k1']  # 自动触发执行 __getitem__
+obj['k2'] = 'laowang'  # 自动触发执行 __setitem__
+del obj['k1']  # 自动触发执行 __delitem__
 
 
 # 9、__getslice__、__setslice__、__delslice__
@@ -156,6 +162,6 @@ class Foo(object):
 
 obj = Foo()
 
-obj[-1:1]                   # 自动触发执行 __getslice__
-obj[0:1] = [11, 22, 33, 44]    # 自动触发执行 __setslice__
-del obj[0:2]                # 自动触发执行 __delslice__
+obj[-1:1]  # 自动触发执行 __getslice__
+obj[0:1] = [11, 22, 33, 44]  # 自动触发执行 __setslice__
+del obj[0:2]  # 自动触发执行 __delslice__

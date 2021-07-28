@@ -24,6 +24,8 @@ def m1():
     f = open("output.txt", "w")
     f.write("python之禅")
     f.close()
+
+
 # 这样写有一个潜在的问题，如果在调用 write 的过程中，出现了异常进而导致后续代码无法继续执行，close 方法无法被正常调用，
 # 因此资源就会一直被该程序占用者释放。那么该如何改进代码呢？
 
@@ -37,6 +39,8 @@ def m2():
         print("oops error")
     finally:
         f.close()
+
+
 # 改良版本的程序是对可能发生异常的代码处进行 try 捕获，使用 try/finally 语句，
 # 该语句表示如果在 try 代码块中程序出现了异常，后续代码就不再执行，而直接跳转到 except 代码块。
 # 而无论如何，finally 块的代码最终都会被执行。因此，只要把 close 放在 finally 代码中，文件就一定会关闭。
@@ -46,6 +50,8 @@ def m2():
 def m3():
     with open("output.txt", "r") as f:
         f.write("Python之禅")
+
+
 # 一种更加简洁、优雅的方式就是用 with 关键字。open 方法的返回值赋值给变量 f，
 # 当离开 with 代码块的时候，系统会自动调用 f.close() 方法， with 的作用和使用 try/finally 语句是一样的。
 # 那么它的实现原理是什么？在讲 with 的原理前要涉及到另外一个概念，就是上下文管理器（Context Manager）。
@@ -84,6 +90,8 @@ class File(object):
     def __exit__(self, *args):
         print("will exit")
         self.f.close()
+
+
 # __enter__() 方法返回资源对象，这里就是你将要打开的那个文件对象，__exit__() 方法处理一些清除工作。
 #
 # 因为 File 类实现了上下文管理器，现在就可以使用 with 语句了。
@@ -108,6 +116,8 @@ def my_open(path, mode):
     f = open(path, mode)
     yield f
     f.close()
+
+
 # 调用
 
 
